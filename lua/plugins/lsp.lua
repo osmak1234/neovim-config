@@ -29,6 +29,15 @@ return {
           package_pending = "",
           package_uninstalled = "✗"
         }
+      },
+      servers = {
+        sqlls = {
+          install_package = "sql-language-server",
+          default_options = {
+            cmd = { "sql-language-server", "up", "--method", "stdio" },
+          },
+          root_dir = require("lspconfig.util").root_pattern(".git", vim.fn.getcwd()),
+        },
       }
     },
   },
@@ -38,6 +47,6 @@ return {
   { import = "plugins.extras.lang.java" }, { import = "lazyvim.plugins.extras.formatting.prettier" },
   { import = "plugins.extras.lang.rust" },
   { import = "plugins.extras.lang.nodejs" },
-  {import = "plugins.extras.lang.sql"},
+  { import = "plugins.extras.lang.sql" },
 
 }
