@@ -14,9 +14,8 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- harpoon
-map("n", "<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Harpoon menu" })
-map("n", "<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<cr>", { desc = "Harpoon add file" })
-map("n", "<leader>ha", "<cmd>lua require('harpoon.mark').toggle_file()<cr>", { desc = "Harpoon toggle" })
+map("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Harpoon menu" })
+map("n", "<leader>a", "<cmd>lua require('harpoon.mark').toggle_file()<cr>", { desc = "Harpoon toggle" })
 --naviagtes to file 1
 map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", { desc = "Harpoon go to 1" })
 map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", { desc = "Harpoon go to 2" })
