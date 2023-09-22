@@ -13,20 +13,29 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- create a buffer and execure :Ex in it
+
 -- harpoon
 map("n", "<leader>h", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", { desc = "Harpoon menu" })
 map("n", "<leader>a", "<cmd>lua require('harpoon.mark').toggle_file()<cr>", { desc = "Harpoon toggle" })
---naviagtes to file 1
-map("n", "<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", { desc = "Harpoon go to 1" })
-map("n", "<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", { desc = "Harpoon go to 2" })
-map("n", "<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", { desc = "Harpoon go to 3" })
-map("n", "<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", { desc = "Harpoon go to 4" })
-map("n", "<leader>5", "<cmd>lua require('harpoon.ui').nav_file(5)<cr>", { desc = "Harpoon go to 5" })
-map("n", "<leader>6", "<cmd>lua require('harpoon.ui').nav_file(6)<cr>", { desc = "Harpoon go to 6" })
-map("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(7)<cr>", { desc = "Harpoon go to 7" })
-map("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(8)<cr>", { desc = "Harpoon go to 8" })
-map("n", "<leader>7", "<cmd>lua require('harpoon.ui').nav_file(9)<cr>", { desc = "Harpoon go to 9" })
+--naviagtes to files using hjkl
+map("n", "<C-h>", "<cmd>lua require('harpoon.ui').nav_file(1)<cr>", { desc = "Harpoon nav 1" })
+map("n", "<C-j>", "<cmd>lua require('harpoon.ui').nav_file(2)<cr>", { desc = "Harpoon nav 2" })
+map("n", "<C-l>", "<cmd>lua require('harpoon.ui').nav_file(3)<cr>", { desc = "Harpoon nav 3" })
+map("n", "<C-k>", "<cmd>lua require('harpoon.ui').nav_file(4)<cr>", { desc = "Harpoon nav 4" })
 
+map("n", "1", "<cmd>BufferLineGoToBuffer 1<cr>", { desc = "Bufferline nav 1" })
+map("n", "2", "<cmd>BufferLineGoToBuffer 2<cr>", { desc = "Bufferline nav 2" })
+map("n", "3", "<cmd>BufferLineGoToBuffer 3<cr>", { desc = "Bufferline nav 3" })
+map("n", "4", "<cmd>BufferLineGoToBuffer 4<cr>", { desc = "Bufferline nav 4" })
+map("n", "5", "<cmd>BufferLineGoToBuffer 5<cr>", { desc = "Bufferline nav 5" })
+map("n", "6", "<cmd>BufferLineGoToBuffer 6<cr>", { desc = "Bufferline nav 6" })
+map("n", "7", "<cmd>BufferLineGoToBuffer 7<cr>", { desc = "Bufferline nav 7" })
+map("n", "8", "<cmd>BufferLineGoToBuffer 8<cr>", { desc = "Bufferline nav 8" })
+map("n", "9", "<cmd>BufferLineGoToBuffer 9<cr>", { desc = "Bufferline nav 9" })
+
+map("n", "<C-d>", "<C-d>zz", { desc = "Scroll down" })
+map("n", "<C-u>", "<C-u>zz", { desc = "Scroll up" })
 
 -- zen mode bindings
 map("n", "<leader>zn", ":TZNarrow<CR>", { desc = "Remove" })
@@ -35,15 +44,12 @@ map("n", "<leader>zf", ":TZFocus<CR>", { desc = "Focus" })
 map("n", "<leader>zm", ":TZMinimalist<CR>", { desc = "Minimalist" })
 map("n", "<leader>za", ":TZAtaraxis<CR>", { desc = "Ataraxis" })
 
-
 -- vw to viw
 map("n", "vw", "viw", { desc = "Select word" })
 -- execute viw and than gza in the normal mode
 map("n", "vza", "viw<esc>gza", { desc = "Select word and fold" })
 
--- search and replace learder h
 map("n", "<leader>r", ":%s//g<Left><Left>", { desc = "Search and replace" })
-
 
 -- better up/down
 map("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -75,7 +81,6 @@ map("n", "<leader>kF", "<cmd>VimtexFoldAsync<cr>", { desc = "Fold Async" })
 map("n", "<leader>kU", "<cmd>VimtexInfoAsync<cr>", { desc = "Info Async" })
 map("n", "<leader>kR", "<cmd>VimtexCompileRefreshAsync<cr>", { desc = "Refresh Async" })
 map("n", "<leader>kD", "<cmd>VimtexCompileForceAsync<cr>", { desc = "Force Async" })
-
 
 -- Resize window using <ctrl> arrow keys
 map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase window height" })

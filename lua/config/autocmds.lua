@@ -7,11 +7,25 @@ vim.api.nvim_create_autocmd("BufEnter", {
   command = "set fo-=c fo-=r fo-=o",
 })
 
-vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#63698c')
-vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
-vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7')
-vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
-vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
+vim.cmd("highlight! HarpoonInactive guibg=NONE guifg=#63698c")
+vim.cmd("highlight! HarpoonActive guibg=NONE guifg=white")
+vim.cmd("highlight! HarpoonNumberActive guibg=NONE guifg=#7aa2f7")
+vim.cmd("highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7")
+vim.cmd("highlight! TabLineFill guibg=NONE guifg=white")
+
+-- augroup ProjectDrawer
+--     autocmd!
+--     autocmd VimEnter * if argc() == 0 | Explore! | endif
+-- augroup END
+-- conver this to lua
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  callback = function()
+    if vim.fn.argc() == 0 then
+      vim.cmd("Explore!")
+    end
+  end,
+})
 
 -- resize splits if window got resized
 vim.api.nvim_create_autocmd({ "VimResized" }, {

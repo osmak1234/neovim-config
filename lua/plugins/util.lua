@@ -5,9 +5,8 @@ return {
     "folke/noice.nvim",
     opts = {
       cmdline = {
-        view="cmdline"
-
-      }
+        view = "cmdline",
+      },
     },
   },
 
@@ -39,10 +38,9 @@ return {
       },
       -- Jump to request line on run
       jump_to_request = false,
-      env_file = '.env',
+      env_file = ".env",
       custom_dynamic_variables = {},
       yank_dry_run = true,
-    }
+    },
   },
-
 }

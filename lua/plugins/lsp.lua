@@ -42,11 +42,17 @@ return {
     },
   },
 
+
   -- language specific extension modules
   { import = "lazyvim.plugins.extras.lang.typescript" },
-  { import = "plugins.extras.lang.java" }, { import = "lazyvim.plugins.extras.formatting.prettier" },
-  { import = "plugins.extras.lang.rust" },
+  { import = "lazyvim.plugins.extras.lang.clangd" },
+  { import = "lazyvim.plugins.extras.formatting.prettier" },
+  { import = "lazyvim.plugins.extras.lang.json" },
+  { import = "lazyvim.plugins.extras.lang.go" },
+  { import = "plugins.extras.lang.tailwindcss" },
   { import = "plugins.extras.lang.nodejs" },
+  { import = "plugins.extras.lang.rust" },
   { import = "plugins.extras.lang.sql" },
+  { import = "plugins.extras.lang.java" },
 
 }
